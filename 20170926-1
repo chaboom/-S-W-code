@@ -1,0 +1,44 @@
+package kr.ac.inu.firstapp.firstapp;
+
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.LinearLayout;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        //setContentView(R.layout.activity_main);
+
+        LinearLayout lin = new LinearLayout(MainActivity.this);
+        LinearLayout.LayoutParams lparam = new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT
+        );
+        lin.setLayoutParams(lparam);
+        lin.setOrientation(LinearLayout.VERTICAL);
+
+        Button b1 = new Button(MainActivity.this);
+        Button b2 = new Button(MainActivity.this);
+
+        LinearLayout.LayoutParams bparam = new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT
+        );
+        b1.setLayoutParams(bparam);
+        b2.setLayoutParams(bparam);
+        //b1.setId(View.generateViewId());
+        //b2.setId(View.generateViewId());
+        b1.setText("Button 1");
+        b2.setText("Button 2");
+
+        lin.addView(b1);
+        lin.addView(b2);
+
+        setContentView(lin);
+    }
+}
+
